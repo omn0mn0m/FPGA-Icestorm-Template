@@ -29,7 +29,10 @@ par:
 
 sim:
 	@$(MAKE) -C sim -f sim.mk
-
+	
+src:
+	@$(MAKE) -C src -f src.mk
+	
 syn:
 	@$(MAKE) -C syn -f syn.mk
 
@@ -44,6 +47,6 @@ clean:
 	@$(MAKE) -C par clean -f par.mk
 	@$(MAKE) -C sim clean -f sim.mk
 	@$(MAKE) -C syn clean -f syn.mk
-
+	
 .SECONDARY:
-.PHONY: all clean prog sudo-prog doc loads par sim syn
+.PHONY: all clean prog sudo-prog doc loads par sim src syn

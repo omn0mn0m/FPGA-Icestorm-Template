@@ -1,4 +1,4 @@
-PROJ	= TinyFPGA_B
+PROJ	= test
 
 PIN_DEF	= pins.pcf
 DEVICE	= lp8k

@@ -38,10 +38,10 @@ module TinyFPGA_B (
   
   always @(posedge pin3_clk_16mhz) begin
      if (pin4_reset) begin
-	counter <= 0; // Resets counter
+	    counter <= 0; // Resets counter
      end
      else begin
-	counter <= counter + 1;
+	    counter <= counter + 1;
      end
   end
 
