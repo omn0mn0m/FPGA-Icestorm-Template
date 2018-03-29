@@ -41,40 +41,36 @@ with open(top_level_path, "w") as top_level:
     top_level.write("///////////////////////////////////////////////////////////////////////////////\n")
     top_level.write("module " + project_name + " (\n")
 
-    port_type = raw_input("Enter your port type (input, output). Enter nothing to go to the next step: ")
-
-    while not port_type == "":
-        if port_type == "output":
-            is_reg = raw_input("Is this a register (Y/N)?: ")
-
-            if is_reg.lower() == 'y':
-                port_type += " reg"
-
-        if port_type == "input" or port_type == "output" or port_type == "output reg":
-            try:
-                bits = raw_input("Enter the bit size: ")
-            except:
-                bits = '1'
-
-            if bits == '1' or bits == '':
-                port_bits = ""
-            else:
-                port_bits = "[" + bits + ":0]"
-
-            port_name = raw_input("Enter your port name: ")
-            top_level.write("    " + port_type + " " + port_bits + " " + port_name)
-
+    if raw_input("Would you like to generate your ports (Y/N)? ").lower() == 'y':
         port_type = raw_input("Enter your port type (input, output). Enter nothing to go to the next step: ")
 
-        if port_type == "input" or port_type == "output":
-            top_level.write(",\n")
-        else:
-            top_level.write("\n")
+        while not port_type == "":
+            if port_type == "output":
+                is_reg = raw_input("Is this a register (Y/N)?: ")
+
+                if is_reg.lower() == 'y':
+                    port_type += " reg"
+
+            if port_type == "input" or port_type == "output" or port_type == "output reg":
+                bits = raw_input("Enter the bit size: ")
+                port_name = raw_input("Enter your port name: ")
+
+                if bits == '1' or bits == '':
+                    top_level.write("    " + port_type + " " + port_name)
+                else:
+                    top_level.write("    " + port_type + " [" + bits + ":0] " + port_name)
+            
+            port_type = raw_input("Enter your port type (input, output). Enter nothing to go to the next step: ")
+
+            if port_type == "input" or port_type == "output":
+                top_level.write(",\n")
+            else:
+                top_level.write("\n")
+    else:
+        top_level.write("// TODO: Add ports here\n")
 
     top_level.write(");\n\n")
     top_level.write("// TODO: Write code here\n\n")
     top_level.write("endmodule\n")
 
-print "Exiting Verilog project generation..."
-
-top_level.close()
+    print "Exiting Verilog project generation..."
