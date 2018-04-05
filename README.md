@@ -13,6 +13,14 @@ The purpose of this template is to provide a multi-directory structure that allo
 - `src`- Source design files
 - `syn` - Synthesis generated files
 
+## Tools Needed
+- [Project Icestorm](https://github.com/cliffordwolf/icestorm)
+- [Arachne-PNR](https://github.com/cseed/arachne-pnr)
+- [Yosys](http://www.clifford.at/yosys/)
+- [GTKWave](http://gtkwave.sourceforge.net/)
+- [Make](https://www.gnu.org/software/make/manual/make.html)
+- [Python 2.7](https://www.python.org/)
+
 ## Code Generation
 To generate your Verilog project, run: `python scripts/generate_verilog.v`
 
