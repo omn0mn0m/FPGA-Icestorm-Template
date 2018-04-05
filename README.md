@@ -3,6 +3,16 @@ This is my personal project structure and Makefile for the FPGA boards which fea
 
 The purpose of this template is to provide a multi-directory structure that allows for clear file output and organisation.
 
+## Directories
+- `docs` - Contains GitHub contribution documentation, as well as eventual location for generated project docs
+- `examples` - Full projects using the template for reference
+- `loads` - Files (.bin) to load onto the FPGA
+- `par` - Place and route files (generated file and .pcf file)
+- `scripts` - Python scripts to assist in various tasks
+- `sim` - Testbench files and sim results
+- `src`- Source design files
+- `syn` - Synthesis generated files
+
 ## Code Generation
 To generate your Verilog project, run: `python scripts/generate_verilog.v`
 
