@@ -22,7 +22,7 @@ The purpose of this template is to provide a multi-directory structure that allo
 - [Python 2.7](https://www.python.org/)
 
 ## Code Generation
-To generate your Verilog project, run: `python scripts/generate_verilog.v`
+To generate your Verilog project, run: `python scripts/generate_verilog.py`
 
 To generate a testbench from a Verilog top-level module, run: `python scripts/generate_testbench.py`
 
