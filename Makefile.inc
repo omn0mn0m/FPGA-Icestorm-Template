@@ -12,3 +12,5 @@ PAR		= $(ROOT)/par
 SIM		= $(ROOT)/sim
 SRC		= $(ROOT)/src
 SYN		= $(ROOT)/syn
+
+include $(SRC)/src.inc

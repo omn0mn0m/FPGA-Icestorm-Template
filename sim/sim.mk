@@ -3,7 +3,7 @@ include ../Makefile.inc
 sim: $(PROJ).vcd
 	gtkwave $<
 	
-%_tb: %_tb.v $(SRC)/%.v
+%_tb: %_tb.v $(SRC)/%.v  $(SRC_SUB_FILES)
 	iverilog -o $@ $^
 
 %.vcd: %_tb
