@@ -4,8 +4,13 @@ import os
 # Generation start
 print "Starting Verilog project generation..."
 
-project_name = raw_input("Enter your project name: ")
-device_type = raw_input("Enter your target device chip: ")
+project_name = raw_input("Enter your project name (Example): ")
+if project_name == "":
+    project_name = "Example"
+
+device_type = raw_input("Enter your target device chip (lp8k): ")
+if device_type == "":
+    device_type = "lp8k"
 
 print "Generating Makefile.inc..."
 

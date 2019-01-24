@@ -1,4 +1,4 @@
-PROJ	= test
+PROJ	= Example
 
 PIN_DEF	= pins.pcf
 DEVICE	= lp8k
@@ -12,5 +12,3 @@ PAR		= $(ROOT)/par
 SIM		= $(ROOT)/sim
 SRC		= $(ROOT)/src
 SYN		= $(ROOT)/syn
-
-include $(SRC)/src.inc
