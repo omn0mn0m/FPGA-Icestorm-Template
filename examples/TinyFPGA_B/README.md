@@ -1,52 +1,34 @@
-# Original TinyFPGA-B Template README File
+# FPGA Icestorm Template
+This is my personal project structure and Makefile for the FPGA boards which features an iCE40 FPGA. This particular example is based on the [Icestorm Template here](https://github.com/tinyfpga/TinyFPGA-B-Series).
 
-Install [icestorm](http://www.clifford.at/icestorm/) for your computer once:
+The purpose of this template is to provide a multi-directory structure that allows for clear file output and organisation.
 
-```sh
-sudo apt-get install build-essential clang bison flex libreadline-dev \
-                     gawk tcl-dev libffi-dev git mercurial graphviz   \
-                     xdot pkg-config python python3 libftdi-dev
+## Directories
+- `docs` - Contains GitHub contribution documentation, as well as eventual location for generated project docs
+- `examples` - Full projects using the template for reference
+- `loads` - Files (.bin) to load onto the FPGA
+- `par` - Place and route files (generated file and .pcf file)
+- `scripts` - Python scripts to assist in various tasks
+- `sim` - Testbench files and sim results
+- `src`- Source design files
+- `syn` - Synthesis generated files
 
-mkdir icestorm-build
-cd icestorm-build
+## Tools Needed
+- [Project Icestorm](https://github.com/cliffordwolf/icestorm)
+- [Arachne-PNR](https://github.com/cseed/arachne-pnr)
+- [Yosys](http://www.clifford.at/yosys/)
+- [GTKWave](http://gtkwave.sourceforge.net/)
+- [Make](https://www.gnu.org/software/make/manual/make.html)
+- [Python 2.7](https://www.python.org/)
 
-git clone https://github.com/cliffordwolf/icestorm.git icestorm
-cd icestorm
-make -j$(nproc)
-sudo make install
-cd ..
+## Code Generation
+To generate your Verilog project, run: `python scripts/generate_verilog.py`
 
+To generate a testbench from a Verilog top-level module, run: `python scripts/generate_testbench.py`
 
-git clone https://github.com/cseed/arachne-pnr.git arachne-pnr
-cd arachne-pnr
-make -j$(nproc)
-sudo make install
-cd ..
+To generate a physical constraints file from a Verilog top-level module, run: `python scripts/generate_pcf.py`
 
-git clone https://github.com/cliffordwolf/yosys.git yosys
-cd yosys
-make -j$(nproc)
-sudo make install
-cd ..
+## FPGA Workflow Commands
+To synthesise then place and route, run: `make`
 
-
-```
-
-Copy the icestorm_template directory to a new project directory with a name of your choosing:
-
-```shell
-cp icestorm_template ~/my_tinyfpga_project
-```
-
-Build the project:
-```shell
-cd ~/my_tinyfpga_project
-make
-```
-
-The programmer script lives in this repo in [programmer/tinyfpgab.py](https://github.com/tinyfpga/TinyFPGA-B-Series/blob/master/programmer/tinyfpgab.py) Program the TinyFPGA B-series board with the bitstream:
-```shell
-python $TINYFPGA_B_REPO/programmer/tinyfpgab.py --program TinyFPGA_B.bin
-```
-
-
+To simulate, run: `make sim`

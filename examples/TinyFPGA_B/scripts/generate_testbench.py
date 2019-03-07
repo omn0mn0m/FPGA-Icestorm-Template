@@ -22,6 +22,7 @@ try:
         # Parse top-level module for ports
         for line in top_level:
             temp = line.replace(',', ' ').split()
+            print temp
 
             if len(temp) > 0:
                 if temp[0] == 'input':
@@ -52,7 +53,7 @@ try:
             
             for input_port in inputs:
                 if input_port[2] == 1:
-                    testbench.write("    reg " + input_port[1] + " = 0\n")
+                    testbench.write("    reg " + input_port[1] + " = 0;\n")
                 else:
                     testbench.write("    reg " + "[" + str(input_port[2]) + ":0] " + input_port[1] + " = 0;\n")
 
@@ -63,7 +64,7 @@ try:
             
             for output_port in outputs:
                 if output_port[2] == 1:
-                    testbench.write("    wire " + output_port[1] + " = 0\n")
+                    testbench.write("    wire " + output_port[1] + " = 0;\n")
                 else:
                     testbench.write("    wire " + "[" + str(output_port[2]) + ":0] " + output_port[1] + " = 0;\n")
 
