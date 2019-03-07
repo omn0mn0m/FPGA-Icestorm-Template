@@ -15,7 +15,7 @@ The purpose of this template is to provide a multi-directory structure that allo
 
 ## Tools Needed
 - [Project Icestorm](https://github.com/cliffordwolf/icestorm)
-- [Arachne-PNR](https://github.com/cseed/arachne-pnr)
+- [NextPNR](https://github.com/YosysHQ/nextpnr)
 - [Yosys](http://www.clifford.at/yosys/)
 - [GTKWave](http://gtkwave.sourceforge.net/)
 - [Make](https://www.gnu.org/software/make/manual/make.html)
