@@ -1,5 +1,5 @@
 # FPGA Icestorm Template
-This is my personal project structure and Makefile for the FPGA boards which features an iCE40 FPGA. This particular example is based on the [Icestorm Template here](https://github.com/tinyfpga/TinyFPGA-B-Series).
+This is my personal project structure and Makefile for the FPGA boards which features an iCE40 FPGA. This particular example is based on the [Icestorm Template here](https://github.com/tinyfpga/TinyFPGA-B-Series). The template has been tested on both the TinyFPGA and the Upduino development boards.
 
 The purpose of this template is to provide a multi-directory structure that allows for clear file output and organisation.
 
